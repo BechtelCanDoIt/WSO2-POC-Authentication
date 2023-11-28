@@ -45,9 +45,9 @@ Follow the directions on [4], [5], and [6].
 
 
 ---
-[1] https://is.docs.wso2.com/en/5.11.0/learn/configuring-multi-factor-authentication-with-username-and-password/#try-it-out 
-[2] https://is.docs.wso2.com/en/5.11.0/learn/adding-users-and-roles/#create-a-user
-[3] https://github.com/wso2-extensions/identity-local-auth-magiclink
-[4] https://github.com/wso2-extensions/identity-oauth2-grant-rest
-[5] https://github.com/wso2-extensions/identity-outbound-auth-sms-otp
-[6] https://github.com/wso2-extensions/identity-outbound-auth-email-otp
+- [1] https://is.docs.wso2.com/en/5.11.0/learn/configuring-multi-factor-authentication-with-username-and-password/#try-it-out 
+- [2] https://is.docs.wso2.com/en/5.11.0/learn/adding-users-and-roles/#create-a-user
+- [3] https://github.com/wso2-extensions/identity-local-auth-magiclink
+- [4] https://github.com/wso2-extensions/identity-oauth2-grant-rest
+- [5] https://github.com/wso2-extensions/identity-outbound-auth-sms-otp
+- [6] https://github.com/wso2-extensions/identity-outbound-auth-email-otp

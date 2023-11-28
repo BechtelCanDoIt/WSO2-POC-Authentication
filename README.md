@@ -2,7 +2,7 @@ This is a simple demo of various ways to Authenticate a user using WSO2 related 
 
 # Deploment folder structure
 0) cd <project-dir> -- this is the place you want this effort to live
-1) git clone XYZ-TODO
+1) git@github.com:BechtelCanDoIt/WSO2-POC-Authentication.git
 2) mkdir is
 3) download IS 5.11.0 and copy the resulting unzipped files in the is folder so that you have is/wso2is-5.11.0
 4) In the is/wso2is-5.11.0/bin/ folder find and execute wso2update for your OS version. (Twice to get latest)

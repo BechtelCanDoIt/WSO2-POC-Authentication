@@ -1,0 +1,125 @@
+/*
+ * Copyright (c) 2023, WSO2 LLC. (http://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* styles.css */
+
+/* Overall alignment */
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px; /* Add padding around the outer container */
+}
+
+/* Spacing for form elements */
+.centered form {
+    margin-top: 20px; /* Add space between the title and the form */
+}
+
+/* Style for form groups */
+.centered .form-group {
+    display: flex; /* Use flexbox to align label and input horizontally */
+    margin-bottom: 10px; /* Space below each form group */
+    align-items: center; /* Center align the items vertically */
+}
+
+/* Style for labels within the form groups */
+.centered .form-group label {
+    margin-right: 8px; /* Space between label and input */
+    white-space: nowrap; /* Prevents the label from wrapping */
+}
+
+/* Style for inputs within the form groups */
+.centered .form-group input {
+    flex-grow: 1; /* Allows input to take up the remaining space */
+    padding: 5px 10px; /* Padding inside the input fields */
+    margin-right: 10px; /* Space after the input before the label */
+    margin-bottom: 10px; /* Space below each input */
+}
+
+/* Shared button-like styling for both <a> and <button> elements */
+.centered button {
+    padding: 10px 20px;
+    margin-top: 10px; /* Space above the element */
+    cursor: pointer; /* Changes cursor to pointer when hovering over the element */
+    background-color: #ff7300; /* A specific orange color for the button background */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    display: inline-block; /* Allows the padding and margin to affect the element */
+    text-align: center;
+    min-width: 100px; /* Optional: Adjust to your preference */
+}
+.centered button:hover {
+    background-color: #cc5c00; /* A darker shade for the button background on hover */
+}
+
+/* Shared button-like styling for both <a> and <button> elements */
+.mockbutton {
+    padding: 10px 20px;
+    margin-top: 10px; /* Space above the element */
+    cursor: pointer; /* Changes cursor to pointer when hovering over the element */
+    background-color: #ff7300; /* A specific orange color for the button background */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    display: inline-block; /* Allows the padding and margin to affect the element */
+    text-align: center;
+    min-width: 100px; /* Optional: Adjust to your preference */
+}
+.mockbutton:hover {
+    background-color: #cc5c00; /* A darker shade for the button background on hover */
+}
+.logo a {
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin if you want it to have no space around it */
+    background: none !important; /* No background color */
+    color: inherit !important; /* Inherits the color from parent, or set a specific color */
+    border: none !important;
+    display: inline !important; /* Default display for inline element, without padding and margin */
+    text-decoration: none !important; /* Keeps the underline off if that's the desired look */
+    background-color: transparent !important;
+}
+
+.logo a:hover {
+    background-color: transparent !important; /* Ensures that hovering over the logo doesn't change the background */
+    /* Add any hover effects you want for the logo link here */
+}
+
+/* Responsive design: Make sure it looks good on mobile */
+@media (max-width: 600px) {
+    .centered .form-group {
+        flex-direction: column; /* Stack label and input on small screens */
+        width: 100%; /* Full width to use all available space */
+    }
+
+    .centered .form-group label {
+        margin-bottom: 5px; /* Space between label and input on small screens */
+    }
+
+    .centered .form-group input {
+        width: 100%; /* Full width to use all available space */
+    }
+}

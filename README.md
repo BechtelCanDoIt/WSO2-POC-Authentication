@@ -33,8 +33,8 @@ password: admin
 
 # Follow up Installations
 cd <project-dir>
-mkdir ignoreme <-- ignoreme is where you clone sub-projects into for building
-cd ignoreme
+mkdir is-src <-- is-src is where you clone sub-projects into for building
+cd is-src
 
 ## Magic Link 
 Follow the directions on [3].

@@ -6,7 +6,7 @@ is-src/
 nohup.out
 
 # dependencies
-/node_modules/
+node_modules/
 /.pnp/
 .pnp.js
 
@@ -17,6 +17,7 @@ nohup.out
 /build/
 
 # misc
+.DS_Store/
 /.DS_Store/
 .DS_Store
 .env.local

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  wso2am:
+    image: docker.wso2.com/wso2am:4.0.0
+    container_name: wso2am
+    ports:
+      - "9443:9443"
+      - "9763:9763"
+      - "8243:8243"
+      - "8280:8280"
+    environment:
+      - WAIT_FOR_PORT=9443
+    volumes:
+      - ./repository/deployment/server:/home/wso2carbon/wso2am-4.0.0/repository/deployment/server

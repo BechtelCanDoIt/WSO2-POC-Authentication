@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: ROOT_PASSWORD123
+      MYSQL_DATABASE: WSO2
+      MYSQL_USER: WSO2CARBON
+      MYSQL_PASSWORD: WSO2CARBON_PASSWORD123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql      
+      - scripts:/docker-entrypoint-initdb.d/initial_script.sql
+    networks:
+      - wso2-network
+        
+volumes:
+  mysql_data:
+
+networks:
+  wso2-network:
+    external: true

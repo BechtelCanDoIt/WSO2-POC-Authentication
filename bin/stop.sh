@@ -1,9 +1,12 @@
-#./is/wso2is-5.11.0/bin/wso2server.sh stop
+CURRENT_PWD=`pwd`
+echo "Stop PWD: $CURRENT_PWD"
+
+#../is/wso2is-5.11.0/bin/wso2server.sh stop
 
 #Bring down NPM
-cd ./web/wso2-auth-demo
+cd ../web/wso2-auth-demo
 npm stop
-cd ../..
+cd ../../
 
 # Bring down API-M
 cd ./am

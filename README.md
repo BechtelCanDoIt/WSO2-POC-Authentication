@@ -5,18 +5,12 @@ WARNING: This is still Work in Progress and not ready for use!
 
 This is a simple demo of various ways to Authenticate a user using WSO2 related products.
 
-# Deploment folder structure
-```
-cd <project-dir> -- this is the place you want this effort to live
-git clone git@github.com:BechtelCanDoIt/WSO2-POC-Authentication.git
-mkdir is
-download IS 5.11.0 and copy the resulting unzipped files in the is folder so that you have is/wso2is-5.11.0
-In the is/wso2is-5.11.0/bin/ folder find and execute wso2update for your OS version. (Twice to get latest)
-cd \<project-dir\>
-mkdir am
-downlaod AM 4.0.0 and copy the resulting unzipped files in to the am folder so that you have am/wso2am-4.0.0
-in the am/wso2am-4.0.0/bin/ folder find and execute wso2update for your OS. (Twice to get latest)
-```
+# Deployment folder structure - PRE-REQ Step
+## identity-oauth2-grant-rest
+- Go to https://store.wso2.com/store/assets/isconnector/details/1ce96049-84ed-42e2-a249-82715b3c25c2
+- Click Download Authenticator
+- Click Download Artifacts
+- Copy the results to <POC-AUTHENTICATION>/wso2-config/is-src/identity-oauth2-grant-rest
 
 # Startup
 ```
@@ -36,31 +30,16 @@ Follow [1] then also check Skip Login Consent and Skip Logout Consent and click 
 
 ## Add a new user [2] 'DemoUser' with a valid email address.
 
-# Carbon URL
+# API-M Carbon URL
 ```
 If no other WSO2 product is running it should be: https://localhost.com:9443/carbon/admin/login.jsp
 username: admin
 password: admin
 ```
 
-# Follow up Installations
-```
-cd \<project-dir\>
-mkdir is-src <-- is-src is where you clone sub-projects into for building
-cd is-src
-```
-
-## Magic Link 
-```
-Follow the directions on [3].
-JAR file is actually in: identity-local-auth-magiclink/components/org.wso2.carbon.identity.application.authenticator.magiclink/target
-```
-## OAuth2-Grant-Rest (OTP, etc.)
-```
-Follow the directions on [4], [5], and [6].
-```
 
 ---
+# Helpful Reference Links
 ```
 [1] https://is.docs.wso2.com/en/5.11.0/learn/configuring-multi-factor-authentication-with-username-and-password/#try-it-out 
 [2] https://is.docs.wso2.com/en/5.11.0/learn/adding-users-and-roles/#create-a-user

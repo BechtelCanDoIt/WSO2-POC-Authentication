@@ -6,6 +6,16 @@ print_start_pwd() {
     echo "Start Folder: $current_pwd"
 }
 
+# Function for check_prereqs
+check_prereqs(){
+    echo "Checking pre-prereqs..."
+    ./check-prereqs.sh
+    if [ $? -ne 0 ]; then
+        echo "Error with Pre-Reqs: Exiting."
+        exit 1
+    fi
+}
+
 # Function for cleanup
 cleanup() {
     echo "Starting cleanup..."
@@ -54,20 +64,19 @@ docker_setup() {
 get_jars() {
     echo "Getting JAR files..."
     ./get-is-jars.sh
-    cd $CURRENT_PWD
 }
 
 # Function to start WSO2 servers
 start_servers() {
     echo "Starting servers..."
-    start_am_server()
-    start_is_server()
+    start_am_server
+    start_is_server
     # TODO: Uncomment the following line when the script is debugged completely
     # start_node_server
 }
 
 # Function to start API-M
-start_am_server
+start_am_server(){
     cd ../am
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -75,9 +84,11 @@ start_am_server
         exit 1
     fi
     cd ..
+}
 
 # Function to start Identity Server
-start_is_server
+start_is_server(){
+    echo "DEBUG: IS server is commented out..."
     # TODO: uncomment below when needed
     # cd ../is
     # docker-compose up -d
@@ -86,6 +97,7 @@ start_is_server
     #     exit 1
     # fi
     # cd ..
+}
 
 # Function to start Node server
 start_node_server() {
@@ -96,6 +108,7 @@ start_node_server() {
 
 # Main script execution
 print_start_pwd
+check_prereqs
 cleanup
 setup_folders
 docker_setup

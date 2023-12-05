@@ -1,28 +1,23 @@
-# Don't cd .. here because we are using the pwd from calling script
-
+# Section: identity-oauth2-grant-rest
 # Build working folder
-mkdir ../is-src
+mkdir -p ../is-src/identity-oauth2-grant-rest
 
 # Get needed files
-#TODO: Scott you are here: you need to add copy statements and refactor this into functions
-
-
-# Build project
-#TODO: write mvn clean installs
+local current_pwd=$(pwd)
+cp ../wso2-config/is-src/identity-oauth2-grant-rest/artifacts.zip ../is-src/identity-oauth2-grant-rest
+cd ../is-src/identity-oauth2-grant-rest
+unzip ../is-src/identity-oauth2-grant-rest/artifacts.zip
+cd $current_pwd
+cp ../wso2-config/is-src/identity-oauth2-grant-rest/org.wso2.carbon.identity.oauth2.grant.rest.core-1.0.0.jar ../is-src/identity-oauth2-grant-rest
 
 # Check the exit status of the previous command
 if [ $? -ne 0 ]; then
-    echo "Error occurred in building IS support JAR source. Exiting."
+    echo "Error occurred in unzipping IS support JARs. Exiting."
     exit 1
 fi
 
-
-# Grab supporting jars / scripts
-# TODO: iron this out...
-cd ./identity-oauth2-grant-rest/artifacts
-wget https://product-dist.wso2.com/downloads/is-connectors/1.0.0/RESTAuthenticationConnector/artifacts.zip
-unzip ./*.zip
-
 # Copy jar files to our project
-#TODO: Write this - copy jars to IS dropins
-
+cp ../is-src/identity-oauth2-grant-rest/artifcts/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar ../is/repository/components/dropins
+cp ../is-src/identity-oauth2-grant-rest/artifcts/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar ../is/repository/components/dropins
+cp ../is-src/identity-oauth2-grant-rest/artifcts/identity.oauth2.grant.auth.rest.handler-1.0.0.jar ../is/repository/components/dropins
+cp ../is-src/identity-oauth2-grant-rest/org.wso2.carbon.identity.oauth2.grant.rest.core-1.0.0.jar ../is/repository/components/dropins

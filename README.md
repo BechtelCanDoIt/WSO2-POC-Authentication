@@ -14,6 +14,7 @@ This is a simple demo of various ways to Authenticate a user using WSO2 related 
 
 # Startup
 ```
+cd bin <-- important for scripts to work
 startup.sh
 ```
 

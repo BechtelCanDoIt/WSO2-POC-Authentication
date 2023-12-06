@@ -111,8 +111,8 @@ print_start_pwd
 check_prereqs
 cleanup
 setup_folders
-docker_setup
 get_jars
+docker_setup
 start_servers
 
 

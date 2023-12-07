@@ -13,12 +13,13 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql      
-      - scripts:/docker-entrypoint-initdb.d/initial_script.sql
+      - scripts:/docker-entrypoint-initdb.d
     networks:
       - wso2-network
-        
+
 volumes:
   mysql_data:
+  scripts:  
 
 networks:
   wso2-network:

@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   wso2is:
     image: docker.wso2.com/wso2is:5.11.0
@@ -10,3 +10,7 @@ services:
     volumes:
       - ./repository/deployment/server:/home/wso2carbon/wso2is-5.11.0/repository/deployment/server
       - ./repository/conf:/home/wso2carbon/wso2is-5.11.0/repository/conf
+
+networks:
+  wso2-network:
+    driver: bridge

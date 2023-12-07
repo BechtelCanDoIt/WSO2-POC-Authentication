@@ -23,4 +23,4 @@ volumes:
 
 networks:
   wso2-network:
-    external: true
+    driver: bridge

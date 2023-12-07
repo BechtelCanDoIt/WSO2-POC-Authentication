@@ -31,10 +31,12 @@ setup_folders() {
     echo "Setting up folders..."
     # Setup for API-M
     mkdir -p ../am/repository/deployment/server
+    mkdir -p ../am/repository/deployment/server/executionplans
     mkdir -p ../am/repository/conf
 
     # Setup for IS
     mkdir -p ../is/repository/deployment/server
+    mkdir -p ../is/repository/deployment/server/executionplans
     mkdir -p ../is/repository/conf
     mkdir -p ../is/repository/components/dropins
 
@@ -69,10 +71,21 @@ get_jars() {
 # Function to start WSO2 servers
 start_servers() {
     echo "Starting servers..."
+    start_db_server
     start_am_server
     start_is_server
-    # TODO: Uncomment the following line when the script is debugged completely
-    # start_node_server
+    start_node_server
+}
+
+# Function to start DB
+start_db_server(){
+    cd ../db
+    docker-compose up -d
+    if [ $? -ne 0 ]; then
+        echo "DB didn't start correctly. Exiting."
+        exit 1
+    fi
+    cd ..
 }
 
 # Function to start API-M
@@ -88,15 +101,13 @@ start_am_server(){
 
 # Function to start Identity Server
 start_is_server(){
-    echo "DEBUG: IS server is commented out..."
-    # TODO: uncomment below when needed
-    # cd ../is
-    # docker-compose up -d
-    # if [ $? -ne 0 ]; then
-    #     echo "Identity Server didn't start correctly. Exiting."
-    #     exit 1
-    # fi
-    # cd ..
+    cd ../is
+    docker-compose up -d
+    if [ $? -ne 0 ]; then
+        echo "Identity Server didn't start correctly. Exiting."
+        exit 1
+    fi
+    cd ..
 }
 
 # Function to start Node server

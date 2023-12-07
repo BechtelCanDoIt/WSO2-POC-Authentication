@@ -25,9 +25,9 @@ check_exit_status() {
 
 # Function to copy jar files to the project
 copy_jars_to_project() {
-    cp ../is-src/identity-oauth2-grant-rest/artifcts/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar ../is/repository/components/dropins
-    cp ../is-src/identity-oauth2-grant-rest/artifcts/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar ../is/repository/components/dropins
-    cp ../is-src/identity-oauth2-grant-rest/artifcts/identity.oauth2.grant.auth.rest.handler-1.0.0.jar ../is/repository/components/dropins
+    cp ../is-src/identity-oauth2-grant-rest/artifacts/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar ../is/repository/components/dropins
+    cp ../is-src/identity-oauth2-grant-rest/artifacts/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar ../is/repository/components/dropins
+    cp ../is-src/identity-oauth2-grant-rest/artifacts/identity.oauth2.grant.auth.rest.handler-1.0.0.jar ../is/repository/components/dropins
     cp ../is-src/identity-oauth2-grant-rest/org.wso2.carbon.identity.oauth2.grant.rest.core-1.0.0.jar ../is/repository/components/dropins
 }
 

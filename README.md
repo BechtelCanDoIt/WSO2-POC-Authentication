@@ -10,12 +10,12 @@ This is a simple demo of various ways to Authenticate a user using WSO2 related 
 - Go to https://store.wso2.com/store/assets/isconnector/details/1ce96049-84ed-42e2-a249-82715b3c25c2
 - Click Download Authenticator
 - Click Download Artifacts
-- Copy the results to <POC-AUTHENTICATION>/wso2-config/is-src/identity-oauth2-grant-rest
+- Copy the results to <POC-AUTHENTICATION-HOME>/wso2-config/is-src/identity-oauth2-grant-rest
 
-# Startup
+# Start
 ```
 cd bin <-- important for scripts to work
-startup.sh
+start.sh
 ```
 
 # Stop

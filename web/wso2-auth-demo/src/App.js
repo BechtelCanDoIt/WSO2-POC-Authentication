@@ -37,9 +37,11 @@ function App() {
     <div className="centered">
       <img src="/images/wso2-logo.webp" alt="WSO2 Logo" width="100" />
       <h2>WSO2 Authentication Demo</h2>
+      {/* ### IDENTITY SERVER ### */}
       <Link className="mockbutton" to="/is/identityserver">
         Identity Server
       </Link>
+      {/* ### ASGARDEO ### */}
       {/* 
       <Link className="mockbutton" to="/asgardeo/asgardeo">
         Asgardeo

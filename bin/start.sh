@@ -43,9 +43,6 @@ setup_folders() {
     # Setup for the database
     mkdir -p ../db/scripts
     mkdir -p ../db/mysql_data
-
-    #TODO: REFACTOR: create init scenario where directories are created only if they don't exists and only bring in files if they don't exist
-    #IE: let user keep their changes once the project has been run once
 }
 
 # Function to handle Docker processes
@@ -86,11 +83,14 @@ start_db_server(){
     echo "Start DB Server"
     bin_dir=$(pwd)  # Capture the current directory
 
+    # Provides default users for POC
     cp ../wso2-config/db/initial_script.sql ../db/scripts
+    
+    # Bring in REST API dependencies 
     echo "" >> ../db/scripts/initial_script.sql
-    cat x >> ../db/scripts/initial_script.sql
     #TODO: Add project db mod scriptinto initial_script.sql
-
+    #cat x >> ../db/scripts/initial_script.sql
+    
     # Change to the db directory and start the server
     cd ../db
     docker-compose up -d

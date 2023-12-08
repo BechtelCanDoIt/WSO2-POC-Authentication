@@ -61,6 +61,8 @@ docker_setup() {
     cp ../wso2-config/db/docker-compose.yml ../db/
     cp ../wso2-config/db/initial_script.sql ../db/scripts
 
+    #TODO: Add project db mod scriptinto initial_script.sql
+
     docker network create wso2-network
 }
 
@@ -82,54 +84,66 @@ start_servers() {
 # Function to start DB
 start_db_server(){
     echo "Start DB Server"
-    pwd
+    bin_dir=$(pwd)  # Capture the current directory
+
+    # Change to the db directory and start the server
     cd ../db
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "DB didn't start correctly. Exiting."
         exit 1
     fi
-    cd ..
+
+    # Return to the original directory
+    cd "$bin_dir"
 }
+
 
 # Function to start API-M
 start_am_server(){
     echo "Start AM Server"
-    pwd
+    bin_dir=$(pwd)  # Capture the current directory
+
     cd ../am
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "API-M didn't start correctly. Exiting."
         exit 1
     fi
-    cd ..
+
+    cd "$bin_dir"  # Return to the original directory
 }
 
 # Function to start Identity Server
 start_is_server(){
     echo "Start IS Server"
-    pwd
+    bin_dir=$(pwd)  # Capture the current directory
+
     cd ../is
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "Identity Server didn't start correctly. Exiting."
         exit 1
     fi
-    cd ..
+
+    cd "$bin_dir"  # Return to the original directory
 }
 
 # Function to start Node server
 start_node_server() {
     echo "Start Node Server"
-    pwd
+    bin_dir=$(pwd)  # Capture the current directory
+
     cd ../web/wso2-auth-demo
     npm start &
     if [ $? -ne 0 ]; then
         echo "NPM didn't start correctly. Exiting."
         exit 1
     fi
-    cd ..
+
+    cd "$bin_dir"  # Return to the original directory
 }
+
 
 # Main script execution
 print_start_pwd

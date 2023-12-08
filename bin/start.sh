@@ -43,6 +43,9 @@ setup_folders() {
     # Setup for the database
     mkdir -p ../db/scripts
     mkdir -p ../db/mysql_data
+
+    #TODO: REFACTOR: create init scenario where directories are created only if they don't exists and only bring in files if they don't exist
+    #IE: let user keep their changes once the project has been run once
 }
 
 # Function to handle Docker processes
@@ -59,9 +62,6 @@ docker_setup() {
     cp ../wso2-config/is/docker-compose.yml ../is/
     # cp ../wso2-config/is/deployment.toml ../is/repository/conf
     cp ../wso2-config/db/docker-compose.yml ../db/
-    cp ../wso2-config/db/initial_script.sql ../db/scripts
-
-    #TODO: Add project db mod scriptinto initial_script.sql
 
     docker network create wso2-network
 }
@@ -85,6 +85,11 @@ start_servers() {
 start_db_server(){
     echo "Start DB Server"
     bin_dir=$(pwd)  # Capture the current directory
+
+    cp ../wso2-config/db/initial_script.sql ../db/scripts
+    echo "" >> ../db/scripts/initial_script.sql
+    cat x >> ../db/scripts/initial_script.sql
+    #TODO: Add project db mod scriptinto initial_script.sql
 
     # Change to the db directory and start the server
     cd ../db
@@ -135,7 +140,7 @@ start_node_server() {
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../web/wso2-auth-demo
-    
+
      # Ensure dependencies are installed
     if [ ! -d "node_modules" ]; then
         echo "Installing Node.js dependencies..."

@@ -135,6 +135,17 @@ start_node_server() {
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../web/wso2-auth-demo
+    
+     # Ensure dependencies are installed
+    if [ ! -d "node_modules" ]; then
+        echo "Installing Node.js dependencies..."
+        npm install
+        if [ $? -ne 0 ]; then
+            echo "Error installing Node.js dependencies. Exiting."
+            exit 1
+        fi
+    fi
+
     npm start &
     if [ $? -ne 0 ]; then
         echo "NPM didn't start correctly. Exiting."

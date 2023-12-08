@@ -79,6 +79,8 @@ start_servers() {
 
 # Function to start DB
 start_db_server(){
+    echo "Start DB Server"
+    pwd
     cd ../db
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -90,6 +92,8 @@ start_db_server(){
 
 # Function to start API-M
 start_am_server(){
+    echo "Start AM Server"
+    pwd
     cd ../am
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -101,6 +105,8 @@ start_am_server(){
 
 # Function to start Identity Server
 start_is_server(){
+    echo "Start IS Server"
+    pwd
     cd ../is
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -112,9 +118,15 @@ start_is_server(){
 
 # Function to start Node server
 start_node_server() {
-    echo "Starting Node server..."
+    echo "Start Node Server"
+    pwd
     cd ../web/wso2-auth-demo
     npm start &
+    if [ $? -ne 0 ]; then
+        echo "NPM didn't start correctly. Exiting."
+        exit 1
+    fi
+    cd ..
 }
 
 # Main script execution

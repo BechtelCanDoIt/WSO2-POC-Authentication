@@ -40,7 +40,7 @@ function App() {
       <Link className="mockbutton" to="/is/identityserver">
         Identity Server
       </Link>
-      <Link className="mockbutton" to="/asgardeo/asgardeo">
+      //<Link className="mockbutton" to="/asgardeo/asgardeo">
         Asgardeo
       </Link>
     </div>;

@@ -6,11 +6,13 @@ WARNING: This is still Work in Progress and not ready for use!
 This is a simple demo of various ways to Authenticate a user using WSO2 related products.
 
 # Deployment - PRE-REQ Step
-## Required software
-- docker and docker-compose
-- npm
-  
-## identity-oauth2-grant-rest
+## Required Software
+- Docker and docker-compose
+- NPM
+- WSO2 Docker Hub Account
+
+## Required Project To Manually Install  
+### identity-oauth2-grant-rest
 - Go to https://store.wso2.com/store/assets/isconnector/details/1ce96049-84ed-42e2-a249-82715b3c25c2
 - Click Download Authenticator
 - Click Download Artifacts

@@ -39,6 +39,7 @@ setup_folders() {
     mkdir -p ../is/repository/deployment/server/executionplans
     mkdir -p ../is/repository/conf
     mkdir -p ../is/repository/components/dropins
+    mkdir -p ../is/repository/components/libs
 
     # Setup for the database
     mkdir -p ../db/scripts
@@ -88,8 +89,8 @@ start_db_server(){
     
     # Bring in REST API dependencies 
     echo "" >> ../db/scripts/initial_script.sql
-    #TODO: Add project db mod scriptinto initial_script.sql
-    #cat x >> ../db/scripts/initial_script.sql
+    # Add project db mod scriptinto initial_script.sql
+    cat ../is-src/identity-oauth2-grant-rest/artifacts/dbscripts/mysql.sql >> ../db/scripts/initial_script.sql
     
     # Change to the db directory and start the server
     cd ../db

@@ -60,6 +60,8 @@ docker_setup() {
     # cp ../wso2-config/is/deployment.toml ../is/repository/conf
     cp ../wso2-config/db/docker-compose.yml ../db/
     cp ../wso2-config/db/initial_script.sql ../db/scripts
+
+    docker network create wso2-network
 }
 
 # Function to get JAR files

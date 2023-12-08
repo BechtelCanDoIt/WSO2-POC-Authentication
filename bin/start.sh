@@ -19,7 +19,7 @@ check_prereqs(){
 # Function for cleanup
 cleanup() {
     echo "Starting cleanup..."
-    # ../bin/stop.sh - TODO: Uncomment when needed
+    ./stop.sh
     rm -Rf ../am
     rm -Rf ../is
     rm -Rf ../db

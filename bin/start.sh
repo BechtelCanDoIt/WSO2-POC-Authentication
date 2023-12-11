@@ -37,7 +37,7 @@ setup_folders() {
     # Setup for IS
     mkdir -p ../is/repository/deployment/server
     mkdir -p ../is/repository/deployment/server/executionplans
-    mkdir -p ../is/repository/conf
+    #mkdir -p ../is/repository/conf
     mkdir -p ../is/repository/components/dropins
     mkdir -p ../is/repository/components/libs
 

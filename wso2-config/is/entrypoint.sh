@@ -9,11 +9,10 @@ CONF_DIR="$REPOS_DIR/conf"
 if [ -f "$CONF_DIR/deployment.toml" ]; then
     mv "$CONF_DIR/deployment.toml" "$CONF_DIR/deployment.toml.orig"
 fi
-mv "$CONF_DIR/deployment.toml" mv "$CONF_DIR/deployment.toml.orig"
 
 ### Copy items from poc folder to where they need to live in the server
-cp "$POC_DIR/deployment.toml" "$CONF_DIR/"
-cp "$POC_DIR/rest-auth.properties" "$CONF_DIR/"
+cp "$POC_DIR/deployment.toml" "$CONF_DIR"
+cp "$POC_DIR/rest-auth.properties" "$CONF_DIR"
 
 cp "$POC_DIR/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar" "$REPOS_DIR/components/dropins"
 cp "$POC_DIR/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar" "$REPOS_DIR/components/dropins"

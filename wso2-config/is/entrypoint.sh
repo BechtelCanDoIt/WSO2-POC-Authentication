@@ -35,4 +35,4 @@ else
 fi
 
 ### Now startup WSO2 server
-"$HOME_DIR/$PRODUCT/docker-entrypoint.sh"
+"$HOME_DIR/docker-entrypoint.sh"

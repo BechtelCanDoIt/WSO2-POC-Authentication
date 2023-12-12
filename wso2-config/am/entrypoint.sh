@@ -6,3 +6,6 @@ REPOS_DIR="$HOME_DIR/$PRODUCT/repository"
 
 mv "$REPOS_DIR/conf/deployment.toml" "$REPOS_DIR/conf/deployment.toml.orig"
 cp "$POC_DIR/deployment.toml" "$REPOS_DIR/conf"
+
+### Now startup WSO2 server
+"$HOME_DIR/$PRODUCT/docker-entrypoint.sh"

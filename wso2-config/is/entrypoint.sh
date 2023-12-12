@@ -34,5 +34,5 @@ else
     exit 1
 fi
 
-### Per Directions: Restart server - to pick up configuration changes 
-"$HOME_DIR/$PRODUCT/bin/wso2server.sh restart"
+### Now startup WSO2 server
+"$HOME_DIR/$PRODUCT/docker-entrypoint.sh"

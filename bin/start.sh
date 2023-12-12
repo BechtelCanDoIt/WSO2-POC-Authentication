@@ -64,7 +64,8 @@ docker_setup() {
     chmod a+x ../is/poc/entrypoint.sh
     cp ../wso2-config/is/deployment.toml ../is/poc
     cp ../is-src/identity-oauth2-grant-rest/artifacts/api#identity#authn#v1.war ../is/poc
-    cp ../is-src/identity-oauth2-grant-rest/rest-auth.properties ../is/poc
+    cp ../is-src/identity-oauth2-grant-rest/artifacts/rest-auth.properties ../is/poc
+    cp ../wso2-config/is/SMSPublisher.xml ../is/poc
     
     # DB
     cp ../wso2-config/db/docker-compose.yml ../db/

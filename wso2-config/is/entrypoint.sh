@@ -29,6 +29,9 @@ if [ -d "$CONF_DIR/sms" ]; then
     echo "<configuration type=\"sendOTP\" display=\"sendOTP\" locale=\"en_US\">" >> "$CONF_DIR/sms/sms-templates-admin-config.xml"
     echo "    <body>Your One Time Password is : {{confirmation-code}}</body>" >> "$CONF_DIR/sms/sms-templates-admin-config.xml"
     echo "</configuration>" >> "$CONF_DIR/sms/sms-templates-admin-config.xml"
+else 
+    echo "No $CONF_DIR/sms directory"
+    exit 1
 fi
 
 ### Per Directions: Restart server - to pick up configuration changes 

@@ -92,15 +92,21 @@ start_servers() {
 start_db_server(){
     echo "Start DB Server"
     bin_dir=$(pwd)  # Capture the current directory
+    echo "Current directory: $(pwd)"
 
     # Provides default WSO2 tables and POC users for POC
+    if [ ! -f "../wso2-config/db/initial_script.sql" ]; then
+        echo "DB: initial_script.sql not found!"
+        exit 1
+    fi
     cp ../wso2-config/db/initial_script.sql ../db/scripts
     
-    # Bring in REST API dependencies 
+    # Bring in identity-oauth2-grant-rest dependencies 
     echo "" >> ../db/scripts/initial_script.sql
     # Add project db mod scriptinto initial_script.sql
     cat ../is-src/identity-oauth2-grant-rest/artifacts/dbscripts/mysql.sql >> ../db/scripts/initial_script.sql
-    
+    echo "commit;" >> ../db/scripts/initial_script.sql
+
     # Change to the db directory and start the server
     cd ../db
     docker-compose pull

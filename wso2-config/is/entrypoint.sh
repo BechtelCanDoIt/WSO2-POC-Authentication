@@ -1,4 +1,5 @@
 #!/bin/bash
+pwd
 mv ../repository/conf/deployment.toml ../repository/conf/deployment.toml.orig
 
 ### Copy items from poc folder to where they need to live in the server

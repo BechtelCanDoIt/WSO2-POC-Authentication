@@ -35,4 +35,4 @@ else
 fi
 
 ### Per Directions: Restart server - to pick up configuration changes 
-/home/wso2is-5.11.0/bin/wso2server.sh restart
+"$HOME_DIR/$PRODUCT/bin/wso2server.sh restart"

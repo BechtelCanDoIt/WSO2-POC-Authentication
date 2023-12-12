@@ -17,7 +17,7 @@ cp "$POC_DIR/rest-auth.properties" "$CONF_DIR"
 cp "$POC_DIR/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar" "$REPOS_DIR/components/dropins"
 cp "$POC_DIR/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar" "$REPOS_DIR/components/dropins"
 cp "$POC_DIR/org.wso2.carbon.identity.oauth2.grant.rest.core-1.0.0.jar" "$REPOS_DIR/components/dropins"
-cp "$POC_DIR/identity.oauth2.grant.auth.rest.handler-1.0.0.jar" "$REPOS_DIR/components/libs"
+cp "$POC_DIR/identity.oauth2.grant.auth.rest.handler-1.0.0.jar" "$REPOS_DIR/components/lib"
 
 cp "$POC_DIR/api#identity#authn#v1.war" "$REPOS_DIR/deployment/server/webapps"
 

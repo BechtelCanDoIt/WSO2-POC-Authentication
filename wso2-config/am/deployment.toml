@@ -27,13 +27,13 @@ type = "database_unique_id"
 
 [database.identity_db]
 type = "mysql"
-url = "jdbc:mysql://mysql:3306/WSO2IDENTITY_DB?useSSL=false"
+url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 
 [database.shared_db]
 type = "mysql"
-url = "jdbc:mysql://mysql:3306/WSO2SHARED_DB?useSSL=false"
+url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 

@@ -95,7 +95,7 @@ start_db_server(){
     
     # Change to the db directory and start the server
     cd ../db
-    docker-compse pull
+    docker-compose pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "DB didn't start correctly. Exiting."
@@ -113,7 +113,7 @@ start_am_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../am
-    docker-compse pull
+    docker-compose pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "API-M didn't start correctly. Exiting."
@@ -129,7 +129,7 @@ start_is_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../is
-    docker-compse pull
+    docker-compose pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "Identity Server didn't start correctly. Exiting."

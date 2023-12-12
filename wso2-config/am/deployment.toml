@@ -27,13 +27,15 @@ type = "database_unique_id"
 
 [database.identity_db]
 type = "mysql"
-url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver&allowPublicKeyRetrieval=true"
+#url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver&allowPublicKeyRetrieval=true"
+url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true%26useSSL=false%26useUnicode=true%26characterEncoding=UTF-8%26serverTimezone=UTC%26driverClassName=com.mysql.cj.jdbc.Driver%26allowPublicKeyRetrieval=true"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 
 [database.shared_db]
 type = "mysql"
-url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver&allowPublicKeyRetrieval=true"
+#url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&driverClassName=com.mysql.cj.jdbc.Driver&allowPublicKeyRetrieval=true"
+url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true%26useSSL=false%26useUnicode=true%26characterEncoding=UTF-8%26serverTimezone=UTC%26driverClassName=com.mysql.cj.jdbc.Driver%26allowPublicKeyRetrieval=true"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 

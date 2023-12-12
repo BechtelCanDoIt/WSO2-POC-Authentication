@@ -89,3 +89,53 @@ app_password= "dashboard"
 #password= "xxxx"
 #hostname= "smtp.gmail.com"
 #port= 587
+
+# identity-oauth2-grant-rest  - Endpoint configurations
+[[resource.access_control]]
+default_access = "allow"
+context = "(.*)/api/identity/authn/v1/authenticate"
+secure = "false"
+http_method = "POST"
+
+[[resource.access_control]]
+default_access = "allow"
+context = "(.*)/api/identity/authn/v1/init-authenticator"
+secure = "false"
+http_method = "POST"
+
+[[resource.access_control]]
+default_access = "allow"
+context = "(.*)/api/identity/authn/v1/auth-steps"
+secure = "false"
+http_method = "GET"
+
+[tenant_context.rewrite]
+custom_webapps=["/api/identity/authn/v1/"]
+
+#identity-oauth2-grant-rest - Grant Handler Configs
+[[oauth.custom_grant_type]]
+name="rest_auth_grant"
+grant_handler="org.wso2.carbon.identity.oauth2.grant.rest.handler.AuthenticationGrantHandler"
+grant_validator="org.wso2.carbon.identity.oauth2.grant.rest.handler.AuthenticationGrantValidator"
+
+# SMS_OTP_SERVICE event handler
+# SEE: https://github.com/wso2-extensions/identity-outbound-auth-sms-otp/blob/master/docs/sms_otp_service.md
+[[event_handler]]
+name= "smsOtp"
+properties.enabled=true
+properties.tokenLength=6
+properties.triggerNotification=true
+properties.alphanumericToken=true
+# OTP validation failure reason will be sent in the response.
+properties.showValidationFailureReason=false
+properties.tokenValidityPeriod=120
+# Same valid OTP will be resent, if issued within the interval.
+# Set '0' to always send a new OTP.
+# Should be less than the 'tokenValidityPeriod' value.
+properties.tokenRenewalInterval=60
+# Throttle OTP generation requests from the same user Id.
+# Set '0' for no throttling.
+properties.resendThrottleInterval=30
+# Set the maximum validation attempts allowed until the generated sms-otp expires.
+properties.maxValidationAttemptsAllowed=5
+

@@ -49,20 +49,27 @@ docker_setup() {
         exit 1
     fi
 
+    # Setup network so that wso2 can talk to the database
+    docker network create wso2-network
+
     # AM
     cp ../wso2-config/am/docker-compose.yml ../am/
     cp ../wso2-config/am/entrypoint.sh ../am/poc
+    chmod a+x ../am/poc/entrypoint.sh
     cp ../wso2-config/am/deployment.toml ../am/poc
 
     # IS
     cp ../wso2-config/is/docker-compose.yml ../is/
     cp ../wso2-config/is/entrypoint.sh ../is/poc
+    chmod a+x ../is/poc/entrypoint.sh
     cp ../wso2-config/is/deployment.toml ../is/poc
+    cp ../is-src/identity-oauth2-grant-rest/artifacts/api#identity#authn#v1.war ../is/poc
+    cp ../is-src/identity-oauth2-grant-rest/rest-auth.properties ../is/poc
     
     # DB
     cp ../wso2-config/db/docker-compose.yml ../db/
-
-    docker network create wso2-network
+    cp ../wso2-config/db/initial_script.sql ../db/scripts
+    chmod a+r ../am/poc/entrypoint.sh
 }
 
 # Function to get JAR files
@@ -113,6 +120,7 @@ start_am_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../am
+    # Get latest security fixes
     docker-compose pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -129,12 +137,15 @@ start_is_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../is
+    # Get latest security fixes
     docker-compose pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "Identity Server didn't start correctly. Exiting."
         exit 1
     fi
+    # pickup entrypoint configs - directions say IS needs to be restarted due to config changes
+    docker-compose restart wso2is
 
     cd "$bin_dir"  # Return to the original directory
 }

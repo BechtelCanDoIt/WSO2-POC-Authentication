@@ -16,11 +16,6 @@ services:
       - ./scripts:/docker-entrypoint-initdb.d
     networks:
       - wso2-network
-
-volumes:
-  mysql_data:
-  scripts:  
-
 networks:
   wso2-network:
     external: true

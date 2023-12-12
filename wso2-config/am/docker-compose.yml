@@ -11,8 +11,8 @@ services:
     environment:
       - WAIT_FOR_PORT=9443
     volumes:
-      - ./poc:/home/wso2am-4.0.0/poc
-    entrypoint: /home/wso2am-4.0.0/poc/entrypoint.sh
+      - ./poc:/home/wso2carbon/wso2am-4.0.0/poc
+    entrypoint: /home/wso2carbon/wso2am-4.0.0/poc/entrypoint.sh
 
 networks:
   wso2-network:

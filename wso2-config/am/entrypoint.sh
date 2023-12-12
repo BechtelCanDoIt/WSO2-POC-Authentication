@@ -1,5 +1,8 @@
 #!/bin/bash
-BASE_DIR="/home/wso2am-4.0.0"
-POC_DIR="$BASE_DIR/poc"
-mv "$BASE_DIR/repository/conf/deployment.toml" "$BASE_DIR/repository/conf/deployment.toml.orig"
-cp "$POC_DIR/deployment.toml" "$BASE_DIR/repository/conf"
+HOME_DIR="/home/wso2carbon"
+PRODUCT="wso2am-4.0.0"
+POC_DIR="$HOME_DIR/$PRODUCT/poc"
+REPOS_DIR="$HOME_DIR/$PRODUCT/repository"
+
+mv "$REPOS_DIR/conf/deployment.toml" "$REPOS_DIR/conf/deployment.toml.orig"
+cp "$POC_DIR/deployment.toml" "$REPOS_DIR/conf"

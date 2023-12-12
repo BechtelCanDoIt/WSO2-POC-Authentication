@@ -8,8 +8,8 @@ services:
     environment:
       - WAIT_FOR_PORT=9444
     volumes:
-      - ./poc:/home/wso2is-5.11.0/poc
-    entrypoint: /home/wso2is-5.11.0/poc/entrypoint.sh
+      - ./poc:/home/wso2carbon/wso2is-5.11.0/poc
+    entrypoint: /home/wso2carbon/wso2is-5.11.0/poc/entrypoint.sh
 
 networks:
   wso2-network:

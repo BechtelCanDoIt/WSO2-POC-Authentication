@@ -1,6 +1,8 @@
 #!/bin/bash
-POC_DIR="/home/wso2is-5.11.0/poc"
-REPOS_DIR="/home/wso2is-5.11.0/repository"
+HOME_DIR="/home/wso2carbon"
+PRODUCT="wso2is-5.11.0"
+POC_DIR="$HOME_DIR/$PRODUCT/poc"
+REPOS_DIR="$HOME_DIR/$PRODUCT/repository"
 CONF_DIR="$REPOS_DIR/conf"
 
 # Move original deployment.toml, if it exists

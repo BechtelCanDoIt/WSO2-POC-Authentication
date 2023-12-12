@@ -30,16 +30,10 @@ cleanup() {
 setup_folders() {
     echo "Setting up folders..."
     # Setup for API-M
-    mkdir -p ../am/repository/deployment/server
-    mkdir -p ../am/repository/deployment/server/executionplans
-    mkdir -p ../am/repository/conf
+    mkdir -p ../am/poc
 
     # Setup for IS
-    mkdir -p ../is/repository/deployment/server
-    mkdir -p ../is/repository/deployment/server/executionplans
-    #mkdir -p ../is/repository/conf
-    mkdir -p ../is/repository/components/dropins
-    mkdir -p ../is/repository/components/libs
+    mkdir -p ../is/poc
 
     # Setup for the database
     mkdir -p ../db/scripts
@@ -55,10 +49,17 @@ docker_setup() {
         exit 1
     fi
 
+    # AM
     cp ../wso2-config/am/docker-compose.yml ../am/
-    # cp ../wso2-config/am/deployment.toml ../am/repository/conf
+    cp ../wso2-config/am/entrypoint.sh ../am/poc
+    cp ../wso2-config/am/deployment.toml ../am/poc
+
+    # IS
     cp ../wso2-config/is/docker-compose.yml ../is/
-    # cp ../wso2-config/is/deployment.toml ../is/repository/conf
+    cp ../wso2-config/is/entrypoint.sh ../is/poc
+    cp ../wso2-config/is/deployment.toml ../is/poc
+    
+    # DB
     cp ../wso2-config/db/docker-compose.yml ../db/
 
     docker network create wso2-network
@@ -84,7 +85,7 @@ start_db_server(){
     echo "Start DB Server"
     bin_dir=$(pwd)  # Capture the current directory
 
-    # Provides default users for POC
+    # Provides default WSO2 tables and POC users for POC
     cp ../wso2-config/db/initial_script.sql ../db/scripts
     
     # Bring in REST API dependencies 
@@ -94,6 +95,7 @@ start_db_server(){
     
     # Change to the db directory and start the server
     cd ../db
+    docker-compse pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "DB didn't start correctly. Exiting."
@@ -111,6 +113,7 @@ start_am_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../am
+    docker-compse pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "API-M didn't start correctly. Exiting."
@@ -126,6 +129,7 @@ start_is_server(){
     bin_dir=$(pwd)  # Capture the current directory
 
     cd ../is
+    docker-compse pull
     docker-compose up -d
     if [ $? -ne 0 ]; then
         echo "Identity Server didn't start correctly. Exiting."

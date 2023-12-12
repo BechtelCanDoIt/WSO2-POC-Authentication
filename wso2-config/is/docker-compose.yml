@@ -4,12 +4,12 @@ services:
     image: docker.wso2.com/wso2is:5.11.0
     container_name: wso2is
     ports:
-      - "9443:9443"
+      - "9444:9444"
     environment:
-      - WAIT_FOR_PORT=9443
+      - WAIT_FOR_PORT=9444
     volumes:
-      - ./repository/deployment/server:/home/wso2carbon/wso2is-5.11.0/repository/deployment/server
-      - ./repository/conf:/home/wso2carbon/wso2is-5.11.0/repository/conf
+      - ./poc:/home/wso2is-5.11.0/poc
+    entrypoint: /home/wso2is-5.11.0/poc/entrypoint.sh
 
 networks:
   wso2-network:

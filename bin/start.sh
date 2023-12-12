@@ -20,10 +20,10 @@ check_prereqs(){
 cleanup() {
     echo "Starting cleanup..."
     ./stop.sh
-    rm -Rf ../am
-    rm -Rf ../is
-    rm -Rf ../db
-    rm -Rf ../is-src
+    sudo rm -Rf ../am
+    sudo rm -Rf ../is
+    sudo rm -Rf ../db
+    sudo rm -Rf ../is-src
 }
 
 # Function to setup folders

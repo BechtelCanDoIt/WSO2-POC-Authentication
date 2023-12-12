@@ -1,13 +1,13 @@
 #!/bin/bash
 POC_DIR="/home/wso2is-5.11.0/poc"
-REPOS_DIR="/home/wso2carbon/wso2is-5.11.0/repository"
+REPOS_DIR="/home/wso2is-5.11.0/repository"
 CONF_DIR="$REPOS_DIR/conf"
 
 # Move original deployment.toml, if it exists
 if [ -f "$CONF_DIR/deployment.toml" ]; then
     mv "$CONF_DIR/deployment.toml" "$CONF_DIR/deployment.toml.orig"
 fi
-mv ../repository/conf/deployment.toml ../repository/conf/deployment.toml.orig
+mv "$CONF_DIR/deployment.toml" mv "$CONF_DIR/deployment.toml.orig"
 
 ### Copy items from poc folder to where they need to live in the server
 cp "$POC_DIR/deployment.toml" "$CONF_DIR/"

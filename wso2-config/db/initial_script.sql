@@ -1249,7 +1249,6 @@ CREATE INDEX IDX_CORS_SP_APP_ID ON IDN_CORS_ASSOCIATION (SP_APP_ID);
 -- IDN_CORS_ASSOCIATION --
 CREATE INDEX IDX_CORS_ORIGIN_ID ON IDN_CORS_ASSOCIATION (IDN_CORS_ORIGIN_ID);
 
-/*
 -- WSO2SHARED_DB DATABASE (IS version) ----------------------------------------------------------------------------
 use WSO2SHARED_DB;
 
@@ -1763,7 +1762,7 @@ CREATE TABLE IF NOT EXISTS UM_UUID_DOMAIN_MAPPER (
 
 CREATE INDEX UUID_DM_UID_TID ON UM_UUID_DOMAIN_MAPPER(UM_USER_ID, UM_TENANT_ID);
 
-
+/*
 -- WSO2AM_DB DATABASE ---------------------------------------------------------------------------------------------
 use WSO2AM_DB;
 

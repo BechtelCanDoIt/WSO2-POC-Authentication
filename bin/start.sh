@@ -83,8 +83,8 @@ get_jars() {
 start_servers() {
     echo "Starting servers..."
     start_db_server
-    start_am_server
-    start_is_server
+    #start_am_server
+    #start_is_server
     #start_node_server
 }
 

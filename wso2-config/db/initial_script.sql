@@ -1249,6 +1249,7 @@ CREATE INDEX IDX_CORS_SP_APP_ID ON IDN_CORS_ASSOCIATION (SP_APP_ID);
 -- IDN_CORS_ASSOCIATION --
 CREATE INDEX IDX_CORS_ORIGIN_ID ON IDN_CORS_ASSOCIATION (IDN_CORS_ORIGIN_ID);
 
+/*
 -- WSO2SHARED_DB DATABASE (IS version) ----------------------------------------------------------------------------
 use WSO2SHARED_DB;
 
@@ -3963,3 +3964,4 @@ create index IDX_AA_AT_CB on AM_APPLICATION (APPLICATION_TIER,CREATED_BY);
 -- WSO2CARBON_DB DATABASE -----------------------------------------------------------------------------------------
 -- use WSO2CARBON_DB;
 -- Not used now since this stays in H2 database
+*/

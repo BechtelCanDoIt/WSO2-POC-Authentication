@@ -150,7 +150,7 @@ start_db_server(){
 
 # Verify database is ready
 is_db_up() {
-    docker logs db-mysql-1 2>&1 | grep "/usr/sbin/mysqld: ready for connections." > /dev/null
+    docker logs mysql 2>&1 | grep "/usr/sbin/mysqld: ready for connections." > /dev/null
 }
 
 # Function to start API-M

@@ -83,8 +83,16 @@ get_jars() {
 start_servers() {
     echo "Starting servers..."
     start_db_server
-    #start_am_server
-    #start_is_server
+
+    # Wait for the database to be up
+    echo "Waiting for database to be up..."
+    while ! is_db_up; do
+        echo "Database is not up yet. Retrying in 5 seconds..."
+        sleep 5
+    done
+
+    start_am_server
+    start_is_server
     #start_node_server
 }
 
@@ -131,6 +139,10 @@ start_db_server(){
     cd "$bin_dir"
 }
 
+# Verify database is ready
+is_db_up() {
+    docker logs db-mysql-1 2>&1 | grep "/usr/sbin/mysqld: ready for connections." > /dev/null
+}
 
 # Function to start API-M
 start_am_server(){

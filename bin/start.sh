@@ -101,12 +101,23 @@ start_db_server(){
     fi
     cp ../wso2-config/db/initial_script.sql ../db/scripts
     
+    # Bring in IS related tables
+    cat ../wso2-config/db/wso2identity.sql >> ../db/scripts/initial_script.sql
+    cat ../wso2-config/db/wso2identity_consent.sql >> ../db/scripts/initial_script.sql
+    cat ../wso2-config/db/wso2identityuma.sql >> ../db/scripts/initial_script.sql
+
     # Bring in identity-oauth2-grant-rest dependencies 
     echo "-- identity-oauth2-grant-rest --" >> ../db/scripts/initial_script.sql
     echo "use WSO2IDENTITY_DB;" >> ../db/scripts/initial_script.sql
     # Add project db mod scriptinto initial_script.sql
     cat ../is-src/identity-oauth2-grant-rest/artifacts/dbscripts/mysql.sql >> ../db/scripts/initial_script.sql
     
+    # Bring in APIM related tables
+    cat ../wso2-config/db/wso2apimgt.sql >> ../db/scripts/initial_script.sql
+
+    # Bring in the sahred tables
+    cat ../wso2-config/db/wso2shared.sql >> ../db/scripts/initial_script.sql
+
     # Change to the db directory and start the server
     cd ../db
     docker-compose pull

@@ -1,3 +1,4 @@
+
 -- same db as wso2identity.sql
 
 CREATE TABLE CM_PII_CATEGORY (

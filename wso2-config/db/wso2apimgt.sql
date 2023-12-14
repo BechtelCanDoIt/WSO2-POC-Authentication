@@ -1,3 +1,4 @@
+
 -- APIMMGT tables
 use WSO2AM_DB;
 -- Start of IDENTITY Tables--

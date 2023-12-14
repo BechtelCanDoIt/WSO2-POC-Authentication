@@ -1,3 +1,4 @@
+
 -- same db as wso2identity.sql
 
 CREATE TABLE IF NOT EXISTS IDN_UMA_RESOURCE (

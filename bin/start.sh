@@ -118,7 +118,7 @@ start_db_server(){
     echo "\n\n" >> ../db/scripts/initial_script.sql
     cat ../wso2-config/db/wso2identity_consent.sql >> ../db/scripts/initial_script.sql
     echo "\n\n" >> ../db/scripts/initial_script.sql
-    cat ../wso2-config/db/wso2identityuma.sql >> ../db/scripts/initial_script.sql
+    cat ../wso2-config/db/wso2identity_uma.sql >> ../db/scripts/initial_script.sql
 
     # Bring in identity-oauth2-grant-rest dependencies 
     echo "\n\n" >> ../db/scripts/initial_script.sql

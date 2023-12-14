@@ -53,7 +53,8 @@ docker_setup() {
     docker network create wso2-network
     docker network create wso2is
     docker network create wso2am
-    docker network connect wso2-network wso2is wso2am
+    docker network connect wso2-network wso2is 
+    docker network connect wos2-network wso2am
 
     # AM
     cp ../wso2-config/am/docker-compose.yml ../am/

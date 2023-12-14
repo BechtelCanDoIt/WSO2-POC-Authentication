@@ -57,6 +57,7 @@ docker_setup() {
     cp ../wso2-config/am/entrypoint.sh ../am/poc
     chmod a+x ../am/poc/entrypoint.sh
     cp ../wso2-config/am/deployment.toml ../am/poc
+    cp ../db/mysql-connector-j-8.2.0.jar ../am/poc
 
     # IS
     cp ../wso2-config/is/docker-compose.yml ../is/
@@ -66,6 +67,7 @@ docker_setup() {
     cp ../is-src/identity-oauth2-grant-rest/artifacts/api#identity#authn#v1.war ../is/poc
     cp ../is-src/identity-oauth2-grant-rest/artifacts/rest-auth.properties ../is/poc
     cp ../wso2-config/is/SMSPublisher.xml ../is/poc
+    cp ../db/mysql-connector-j-8.2.0.jar ../is/poc
     
     # DB
     cp ../wso2-config/db/docker-compose.yml ../db/
@@ -77,6 +79,7 @@ docker_setup() {
 get_jars() {
     echo "Getting JAR files..."
     ./get-is-jars.sh
+    ./get-db-jars.sh
 }
 
 # Function to start WSO2 servers

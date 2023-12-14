@@ -10,8 +10,13 @@ This is a simple demo of various ways to Authenticate a user using WSO2 related 
 - Docker and docker-compose
 - NPM
 - WSO2 Docker Hub Account
+- mysql client library
   
-## Required Project To Manually Install  
+## Manual Steps Required To Install  
+### MySQL Client Library
+- Download mysql java client jar zip file - https://dev.mysql.com/downloads/connector/j/
+- Place in wso2-config/db
+
 ### REST Authentication Connector
 - Go to https://store.wso2.com/store/assets/isconnector/details/1ce96049-84ed-42e2-a249-82715b3c25c2
 - Click Download Authenticator

@@ -18,10 +18,11 @@ cp "$POC_DIR/org.wso2.carbon.extension.identity.emailotp.common-4.0.6.jar" "$REP
 cp "$POC_DIR/org.wso2.carbon.extension.identity.smsotp.common-3.0.15.jar" "$REPOS_DIR/components/dropins"
 cp "$POC_DIR/org.wso2.carbon.identity.oauth2.grant.rest.core-1.0.0.jar" "$REPOS_DIR/components/dropins"
 cp "$POC_DIR/identity.oauth2.grant.auth.rest.handler-1.0.0.jar" "$REPOS_DIR/components/lib"
-
 cp "$POC_DIR/api#identity#authn#v1.war" "$REPOS_DIR/deployment/server/webapps"
-
 cp "$POC_DIR/SMSPublisher.xml" "$REPOS_DIR/deployment/server/eventpublishers"
+
+rm "$REPOS_DIR/components/dropins/mysql-connector*.jar"
+cp "$POC_DIR/mysql-connector-j-8.2.0.jar" "$REPOS_DIR/components/lib"
 
 ### Add notification configs to IS
 # Add notification configs to IS, check if the directory exists

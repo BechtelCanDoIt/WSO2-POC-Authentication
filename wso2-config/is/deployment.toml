@@ -30,13 +30,13 @@ base_dn = "dc=wso2,dc=org"      #refers the base dn on which the user and group 
 
 [database.identity_db]
 type = "mysql"
-url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true%26useSSL=false%26useUnicode=true%26characterEncoding=UTF-8%26serverTimezone=UTC%26allowPublicKeyRetrieval=true"
+url = "jdbc:mysql://localhost:3306/WSO2IDENTITY_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 
 [database.shared_db]
 type = "mysql"
-url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true%26useSSL=false%26useUnicode=true%26characterEncoding=UTF-8%26serverTimezone=UTC%26allowPublicKeyRetrieval=true"
+url = "jdbc:mysql://localhost:3306/WSO2SHARED_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true"
 username = "WSO2CARBON"
 password = "WSO2CARBON_PASSWORD123"
 

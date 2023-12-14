@@ -21,7 +21,6 @@ cp "$POC_DIR/identity.oauth2.grant.auth.rest.handler-1.0.0.jar" "$REPOS_DIR/comp
 cp "$POC_DIR/api#identity#authn#v1.war" "$REPOS_DIR/deployment/server/webapps"
 cp "$POC_DIR/SMSPublisher.xml" "$REPOS_DIR/deployment/server/eventpublishers"
 
-rm "$REPOS_DIR/components/dropins/mysql-connector*.jar"
 cp "$POC_DIR/mysql-connector-j-8.2.0.jar" "$REPOS_DIR/components/lib"
 
 ### Add notification configs to IS

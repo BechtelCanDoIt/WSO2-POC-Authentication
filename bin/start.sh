@@ -51,6 +51,9 @@ docker_setup() {
 
     # Setup network so that wso2 can talk to the database
     docker network create wso2-network
+    docker network create wso2is
+    docker network create wso2am
+    docker network connect wso2-network wso2is wso2am
 
     # AM
     cp ../wso2-config/am/docker-compose.yml ../am/

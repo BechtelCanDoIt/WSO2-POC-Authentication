@@ -18,7 +18,7 @@ copy_and_expand() {
     cp ../db-src/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar ../db
     
     # Be a good neighbor and clean up
-    rm -rF ../db-src
+    rm -fR ../db-src
 }
 
 # Function to check the exit status of the previous command
